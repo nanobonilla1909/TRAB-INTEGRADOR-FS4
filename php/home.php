@@ -11,7 +11,7 @@
   <body>
     <div class="container">
       <header>
-      <h1>Cerveceria Artesanal</h1>
+      <h1>Pulmahue</h1>
       <div class="login">
         <ul>
           <li>Ingresar</li>
@@ -27,5 +27,7 @@
         </ul>
       </nav>
     </div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
