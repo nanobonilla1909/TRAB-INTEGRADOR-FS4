@@ -5,12 +5,12 @@
     <title>Ingresar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/login.css">
   </head>
   <body>
     <form action="" method="get">
       <div class="container">
-        <h1>Ingresar</h1>
+        <h1>Ingresar!!!</h1>
         <ul>
           <li>
             <label>E-Mail</label>
