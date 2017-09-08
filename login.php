@@ -10,7 +10,7 @@
   <body>
     <form action="" method="get">
       <div class="container">
-        <h1>Ingresar</h1>
+        <h1>Ingresar2</h1>
         <ul>
           <li>
             <label>E-Mail</label>
