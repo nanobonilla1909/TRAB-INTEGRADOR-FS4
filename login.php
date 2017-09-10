@@ -5,32 +5,32 @@
     <title>Ingresar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/login.css">
   </head>
   <body>
-    <form action="" method="get">
-      <div class="container">
-        <h1>Ingresar2</h1>
+
+    <div class="container">
+      <h1>Ingresar</h1>
+      <form action="login.php" method="get">
+        <div class="form-group">
+          <label>E-Mail</label><br>
+          <input class="form-control" type="text" name="user" required><br>
+        </div>
+        <div class="form-group">
+          <label>Contraseña</label><br>
+          <input class="form-control" type="password" name="pass" required>
+        </div>
+        <label><input type="checkbox"> Recordarme</label>
         <ul>
-          <li>
-            <label>E-Mail</label>
-            <input type="text" name="user" required>
-          </li>
-          <li>
-            <label>Contraseña</label>
-            <input type="password" name="pass" placeholder="Contraseña" required>
-          </li>
-          <li><a href="#">Olvidaste tu contraseña? Recuperar</a></li>
+          <li><a href="#">Olvidaste tu contraseña?</a></li>
           <li><a href="#">Aun no tenes usuario? Registrarse</a></li>
-          <li>
-            <button type="submit">Loguearse</button>
-            <button type="button">Cancelar</button>
-          </li>
-          <li>
-            <input type="checkbox" checked>Recordarme
-          </li>
         </ul>
-      </div>
+        <button type="submit">Ingresar</button>
+        <button type="button">Cancelar</button></br>
+
+
+    </div>
     </form>
   </body>
 </html>
