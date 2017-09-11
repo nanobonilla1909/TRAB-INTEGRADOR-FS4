@@ -24,10 +24,10 @@
         <input class="form-control" type="password" name="pass"><br>
         <label>Confirmar contraseña</label><br>
         <input class="form-control" type="password" name="pass-confirm" value=""><br>
-        <input type="checkbox" name="terms" value=""> Soy mayor de 18 años y acepto los <span>Terminos y condiciones</span><br>
+        <input type="checkbox" name="terms" value=""> Soy mayor de 18 años y acepto los <strong>Terminos y condiciones</strong><br>
         <input type="checkbox" name="newsletter" value=""> Deseo recibir noticias del newsletter<br>
         <div class="submit">
-          <a href="#"><button type="submit" name="register">Registrarme</button></a>
+          <a href="home.php"><button type="button" name="register">Registrarme</button></a>
           <a href="home.php"><button type="button">Cancelar</button></a>
         </div>
       </form>
