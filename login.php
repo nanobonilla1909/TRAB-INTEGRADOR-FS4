@@ -9,28 +9,23 @@
     <link rel="stylesheet" href="css/login.css">
   </head>
   <body>
-
-    <div class="container">
-      <h1>Ingresar</h1>
-      <form action="login.php" method="get">
-        <div class="form-group">
-          <label>E-Mail</label><br>
-          <input class="form-control" type="text" name="user" required><br>
-        </div>
-        <div class="form-group">
-          <label>Contraseña</label><br>
-          <input class="form-control" type="password" name="pass" required>
-        </div>
-        <label><input type="checkbox"> Recordarme</label>
-        <ul>
-          <li><a href="#">Olvidaste tu contraseña?</a></li>
-          <li><a href="#">Aun no tenes usuario? Registrarse</a></li>
-        </ul>
+  <div class="container">
+    <h1>Ingresar</h1>
+    <form action="login.php" method="get">
+      <label>E-Mail</label><br>
+      <input class="form-control" type="text" name="user" required><br>
+      <label>Contraseña</label><br>
+      <input class="form-control" type="password" name="pass" required>
+      <label><input type="checkbox"> Recordarme</label>
+      <ul>
+        <li><a href="register.php">Olvidaste tu contraseña?</a></li>
+        <li><a href="register.php">Aun no tenes usuario? Registrarse</a></li>
+      </ul>
+      <div class="submit">
         <button type="submit">Ingresar</button>
-        <button type="button">Cancelar</button></br>
-
-
-    </div>
+        <a href="home.php"><button type="button">Cancelar</button></a></br>
+      </div>
     </form>
+  </div>
   </body>
 </html>
