@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>Pulmahue</h1>
+            <h1><a href="home.php"><img src="" alt="">Logo</a></h1>
             <div class="login">
                 <ul>
                     <li><a href="login.php">Ingresar</a>
