@@ -16,9 +16,9 @@
             <h1>Pulmahue</h1>
             <div class="login">
                 <ul>
-                    <li><a href="#">Ingresar</a>
+                    <li><a href="login.php">Ingresar</a>
                     </li>
-                    <li><a href="#">Registrarse</a>
+                    <li><a href="register.php">Registrarse</a>
                     </li>
                 </ul>
             </div>
@@ -207,11 +207,11 @@
             </p>
             <div class="container">
                 <ul>
-                    <li><a href="#">Twitter</a>
+                    <li><a href="https://twitter.com/">Twitter</a>
                     </li>
-                    <li><a href="#">Facebook</a>
+                    <li><a href="https://es-la.facebook.com/">Facebook</a>
                     </li>
-                    <li><a href="#">Instagram</a>
+                    <li><a href="https://www.instagram.com/">Instagram</a>
                     </li>
                     <li><a href="#">FAQs</a>
                     </li>
