@@ -189,7 +189,7 @@
               </div>
               <div class="col-sm-6 col-md-3">
                   <div class="thumbnail">
-                      <img src="..." alt="...">
+                      <img src="img/imperial.jpg" alt="...">
                       <div class="caption">
                           <h3>Imperial</h3>
                           <p>Cuando se le agrega la palabra "imperial" antes del nombre, quiere decir que es más amarga, más intensa, más alcohólica, más todo. En estilos de cerveza, "imperial" significa más.</p>
@@ -213,7 +213,7 @@
                     </li>
                     <li><a href="https://www.instagram.com/">Instagram</a>
                     </li>
-                    <li><a href="#">FAQs</a>
+                    <li><a href="faqs.php">FAQs</a>
                     </li>
                 </ul>
                 <p>
