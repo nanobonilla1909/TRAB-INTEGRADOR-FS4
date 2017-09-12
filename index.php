@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <header>
-            <h1><a href="home.php"><img src="" alt="">Logo</a></h1>
+            <h1><a href="index.php"><img src="" alt="">Logo</a></h1>
             <div class="login">
                 <ul>
                     <li><a href="login.php">Ingresar</a>
@@ -78,7 +78,7 @@
                         <button type="submit" class="btn btn-default">Buscar</button>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="contacto.php">Carrito</a>
+                        <li><a href="car.php">Carrito</a>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario <span class="caret"></span></a>
@@ -90,7 +90,7 @@
                                 <li><a href="#">Cerrar sesion</a>
                                 </li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Ayuda</a>
+                                <li><a href="help.php">Ayuda</a>
                                 </li>
                             </ul>
                         </li>
