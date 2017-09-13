@@ -39,7 +39,7 @@ if (!empty($_POST)) {
       </ul>
       <div class="submit">
         <button type="submit">Ingresar</button>
-        <a href="home.php"><button type="button">Cancelar</button></a></br>
+        <a href="index.php"><button type="button">Cancelar</button></a></br>
       </div>
     </form>
   </div>

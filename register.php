@@ -27,8 +27,8 @@
         <input type="checkbox" name="terms" value=""> Soy mayor de 18 años y acepto los <strong>Terminos y condiciones</strong><br>
         <input type="checkbox" name="newsletter" value=""> Deseo recibir noticias del newsletter<br>
         <div class="submit">
-          <a href="home.php"><button type="button" name="register">Registrarme</button></a>
-          <a href="home.php"><button type="button">Cancelar</button></a>
+          <a href="index.php"><button type="button" name="register">Registrarme</button></a>
+          <a href="index.php"><button type="button">Cancelar</button></a>
         </div>
       </form>
     </div>

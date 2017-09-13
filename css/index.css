@@ -1,3 +1,6 @@
 .jumbotron{
   background: url('../img/banner.jpg')
 }
+footer {
+  background-color: #ccc;
+}
