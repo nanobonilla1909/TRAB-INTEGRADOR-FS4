@@ -45,7 +45,19 @@ header{
 }
 
 .navbar-default {
-  background-color: #dfbe9f;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.collapse li a{
+  color: white;
+}
+
+.thumbnail{
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.thumbnail p, h3{
+  color: #b5b5b5;
 }
 
 footer {

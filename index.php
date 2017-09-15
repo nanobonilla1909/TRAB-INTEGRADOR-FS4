@@ -142,7 +142,7 @@
               <img src="img/honey.jpg" alt="...">
               <div class="caption">
                 <h3>Honey</h3>
-                <p>Contiene miel, lo que la hace más dulce, pero muchas versiones también son más alcohólicas.</p>
+                <p>Contiene miel, lo que la hace más dulce, pero muchas versiones también son más alcohólicas, dependiendo de la cantidad.</p>
                 <p><a href="#" class="btn btn-primary" role="button">Comprar</a> <a href="#" class="btn btn-default" role="button">Detalles</a></p>
               </div>
             </div>
@@ -152,7 +152,7 @@
               <img src="img/porter.jpg" alt="...">
               <div class="caption">
                 <h3>Porter</h3>
-                <p>Una cerveza clásica inglesa, negra y liviana, con notas de chocolate y café.</p>
+                <p>Una cerveza clásica inglesa, negra y liviana, con notas de chocolate y café, perfecta para comenzar el día con energía.</p>
                 <p><a href="#" class="btn btn-primary" role="button">Comprar</a> <a href="#" class="btn btn-default" role="button">Detalles</a></p>
               </div>
             </div>
@@ -162,7 +162,7 @@
               <img src="img/stout.jpg" alt="...">
               <div class="caption">
                 <h3>Stout</h3>
-                <p>Tiene versiones más dulces como la cream stout y versiones más amargas e intensas como la dry stout. Es negra, con mucho cuerpo y un carácter fuerte a café.</p>
+                <p>Es negra y tiene versiones más dulces como la cream stout y versiones más amargas e intensas como la dry stout.</p>
                 <p><a href="#" class="btn btn-primary" role="button">Comprar</a> <a href="#" class="btn btn-default" role="button">Detalles</a></p>
               </div>
             </div>
@@ -172,7 +172,7 @@
               <img src="img/imperial.jpg" alt="...">
               <div class="caption">
                 <h3>Imperial</h3>
-                <p>Cuando se le agrega la palabra "imperial" antes del nombre, quiere decir que es más amarga, más intensa, más alcohólica, más todo. En estilos de cerveza, "imperial" significa más.</p>
+                <p>Cuando se le agrega la palabra "imperial" antes del nombre, quiere decir que es más amarga, más intensa, más alcohólica, más todo.</p>
                 <p><a href="#" class="btn btn-primary" role="button">Comprar</a> <a href="#" class="btn btn-default" role="button">Detalles</a></p>
               </div>
             </div>
