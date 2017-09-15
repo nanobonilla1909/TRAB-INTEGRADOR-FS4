@@ -42,31 +42,36 @@ header{
 footer {
   background-color: #ccc;
 }
-.footer .container ul {
-  margin-top: 5px;
+footer .container ul {
+  width: 156px;
+  margin: 5px auto;
 }
-.footer .container ul li{
-  text-align: center;
-  padding-top: 3px;
+footer .container ul li{
+  display: inline-block;
+  padding-left: 10px;
+
 }
-.footer .container p{
+footer ul li a img {
+  width: 34px;
+  height: 34px;
+
+}
+footer .container p{
   text-align: center;
   font-size: 12px;
 }
 
 @media (min-width: 768px){
-  .footer .container{
+  footer .container{
     height: 70px;
   }
-
-  .footer .container ul{
+  footer .container ul{
     display: block;
     float: right;
+    padding: 18px 0;
+    margin: 0;
   }
-  .footer .container ul li{
-    display: inline-block;
-  }
-  .footer .container p{
+  footer .container p{
     float: left;
     padding: 29px 0;
     margin: 0;

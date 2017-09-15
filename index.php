@@ -183,10 +183,9 @@
     <footer class="footer" id="footer">
       <div class="container">
         <ul>
-          <li><a href="https://twitter.com/">Twitter</a></li>
-          <li><a href="https://es-la.facebook.com/">Facebook</a></li>
-          <li><a href="https://www.instagram.com/">Instagram</a></li>
-          <li><a href="faqs.php">FAQs</a></li>
+          <li><a href="https://twitter.com/"><img src="img/twitter_icon.png" alt="twitter"></a></li>
+          <li><a href="https://es-la.facebook.com/"><img src="img/facebook_icon.png" alt="facebook"></a></li>
+          <li><a href="https://www.instagram.com/"><img src="img/instagram_icon.png" alt="instagram"></a></li>
         </ul>
         <p>&copy; Copyright Pulmahue</p>
       </div>
