@@ -16,7 +16,7 @@
           <div>
             <!-- <input type="text" class="form-control placeholder="Busque aqui su producto">
             <button type="submit" class="btn btn-default">Buscar</button> -->
-            <input type="text" class="form-controlx placeholder="Buscar">
+            <input type="text" class="form-controlx" placeholder="Buscar">
             <button type="submit" class="btn btn-default">Buscar</button>
           </div>
         </form>
@@ -60,12 +60,9 @@
                   <li><a href="#">Importadas</a></li>
                 </ul>
               </li>
-              <li><a href="#">Promos</a>
-              </li>
-              <li><a href="#">Quienes somos <span class="sr-only">(current)</span></a>
-              </li>
-              <li><a href="faqs.php">Preguntas Frecuentes</a>
-              </li>
+              <li><a href="#">Promos</a></li>
+              <li><a href="#">Quienes somos <span class="sr-only">(current)</span></a></li>
+              <li><a href="faqs.php">Preguntas Frecuentes</a></li>
             </ul>
             <!-- <form class="navbar-form navbar-left">
               <div class="form-group">
@@ -182,20 +179,18 @@
           </div>
         </div>
       </div>
-
-      <footer class="footer" id="footer">
-        <div class="container">
-          <ul>
-            <li><a href="https://twitter.com/">Twitter</a></li>
-            <li><a href="https://es-la.facebook.com/">Facebook</a></li>
-            <li><a href="https://www.instagram.com/">Instagram</a></li>
-            <li><a href="faqs.php">FAQs</a></li>
-          </ul>
-          <p>&copy; Copyright Pulmahue</p>
-        </div>
-      </footer>
-
     </div>
+    <footer class="footer" id="footer">
+      <div class="container">
+        <ul>
+          <li><a href="https://twitter.com/">Twitter</a></li>
+          <li><a href="https://es-la.facebook.com/">Facebook</a></li>
+          <li><a href="https://www.instagram.com/">Instagram</a></li>
+          <li><a href="faqs.php">FAQs</a></li>
+        </ul>
+        <p>&copy; Copyright Pulmahue</p>
+      </div>
+    </footer>
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
