@@ -1,0 +1,44 @@
+.jumbotron{
+  background: url('../img/banner.jpg')
+}
+
+header{
+  overflow: hidden;
+  background-color: #996633;
+}
+
+.logo {
+  float:left;
+}
+
+.login li {
+  float: right;
+  color: white;
+}
+
+.login a {
+  color: white;
+}
+
+.login li span {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.glyphicon.glyphicon-shopping-cart {
+    font-size: 20px;
+}
+
+.buscador {
+  float: left;
+  margin-top: 70px;
+  margin-left: 290px;
+}
+
+.navbar-default {
+  background-color: #dfbe9f;
+}
+
+footer {
+  background-color: #ccc;
+}
