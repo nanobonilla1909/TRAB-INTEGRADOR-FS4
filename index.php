@@ -13,7 +13,7 @@
       <header>
         <h1 class="logo"><a href="index.php"><img src="" alt=""><img src="img/logo1.png" alt=""></a></h1>
         <form class="buscador">
-          <div>
+          <div class="buscar">
             <!-- <input type="text" class="form-control placeholder="Busque aqui su producto">
             <button type="submit" class="btn btn-default">Buscar</button> -->
             <input type="text" class="form-controlx" placeholder="Buscar">
@@ -70,7 +70,7 @@
               </div>
               <button type="submit" class="btn btn-default">Buscar</button>
             </form> -->
-            <ul class="nav navbar-nav navbar-right">
+            <!-- <ul class="nav navbar-nav navbar-right">
               <li><a href="car.php">Carrito</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario <span class="caret"></span></a>
@@ -82,7 +82,7 @@
                   <li><a href="help.php">Ayuda</a></li>
                 </ul>
               </li>
-            </ul>
+            </ul> -->
           </div>
           <!-- /.navbar-collapse -->
         </div>
