@@ -56,7 +56,7 @@ footer {
 
 @media (min-width: 768px){
   .footer .container{
-    height: 50px;
+    height: 70px;
   }
 
   .footer .container ul{
@@ -68,6 +68,7 @@ footer {
   }
   .footer .container p{
     float: left;
-    padding: 15px 0;
+    padding: 29px 0;
+    margin: 0;
   }
 }
