@@ -60,6 +60,16 @@ header{
   color: #b5b5b5;
 }
 
+.btn-primary{
+  background-color: #D68A00;
+  border-color: black;
+}
+
+.btn-primary:hover{
+  background-color: #E4B303;
+  border-color: black;
+}
+
 footer {
   background-color: #ccc;
 }
