@@ -1,10 +1,19 @@
 .jumbotron{
-  background: url('../img/banner.jpg')
+  background: url('../img/banner3.jpg');
+  height: 475px;
+}
+
+.jumbotron h1{
+  color: white;
+}
+
+body{
+  background: url('../img/bg-fondo.jpg')
 }
 
 header{
   overflow: hidden;
-  background-color: #996633;
+  /*background-color: #996633;*/
 }
 
 .logo {
