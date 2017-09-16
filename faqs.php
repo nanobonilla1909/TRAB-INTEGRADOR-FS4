@@ -6,15 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Pulmahue</title>
   </head>
   <body>
     <div class="container">
       <header>
-        <h1><a href="index.php"><img src="" alt="">Logo</a></h1>
+        <h1 class="logo"><a href="index.php"><img src="" alt=""><img src="img/logo1.png" alt=""></a></h1>
+        <form class="buscador">
+          <div class="buscar">
+            <!-- <input type="text" class="form-control placeholder="Busque aqui su producto">
+            <button type="submit" class="btn btn-default">Buscar</button> -->
+            <input type="text" class="form-controlx" placeholder="Buscar">
+            <button type="submit" class="btn btn-default">Buscar</button>
+          </div>
+        </form>
         <div class="login">
           <ul>
+            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
             <li><a href="login.php">Ingresar</a></li>
+            <li><span> | </span></li>
             <li><a href="register.php">Registrarse</a></li>
           </ul>
         </div>
@@ -34,10 +45,6 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Quienes somos <span class="sr-only">(current)</span></a>
-              </li>
-              <li><a href="#">Promos</a>
-              </li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Variedades <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -54,14 +61,17 @@
                   <li><a href="#">Importadas</a></li>
                 </ul>
               </li>
+              <li><a href="#">Promos</a></li>
+              <li><a href="#">Quienes somos <span class="sr-only">(current)</span></a></li>
+              <li><a href="faqs.php">Preguntas Frecuentes</a></li>
             </ul>
-            <form class="navbar-form navbar-left">
+            <!-- <form class="navbar-form navbar-left">
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Search">
               </div>
               <button type="submit" class="btn btn-default">Buscar</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
+            </form> -->
+            <!-- <ul class="nav navbar-nav navbar-right">
               <li><a href="car.php">Carrito</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario <span class="caret"></span></a>
@@ -73,7 +83,7 @@
                   <li><a href="help.php">Ayuda</a></li>
                 </ul>
               </li>
-            </ul>
+            </ul> -->
           </div>
           <!-- /.navbar-collapse -->
         </div>

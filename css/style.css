@@ -16,7 +16,7 @@ header{
 }
 
 .login a {
-  color: white;
+  color: #b5b5b5;
 }
 
 .login li span {
@@ -26,6 +26,7 @@ header{
 
 .glyphicon.glyphicon-shopping-cart {
     font-size: 20px;
+    color: #b5b5b5;
 }
 
 
@@ -38,16 +39,18 @@ header{
   height: 475px;
 }
 
-.jumbotron h1{
-  color: white;
+.jumbotron h1, h1{
+  color: #b5b5b5;
 }
 
 .navbar-default {
   background-color: rgba(0, 0, 0, .5);
+  border-color: rgba(0, 0, 0, .5);
 }
 
 .thumbnail{
   background-color: rgba(0, 0, 0, .5);
+  border-color: rgba(0, 0, 0, .5);
 }
 
 .thumbnail p, h3{
@@ -65,7 +68,7 @@ header{
 }
 
 footer {
-  background-color: #ccc;
+  background-color: #000;
 }
 footer .container ul {
   width: 156px;
@@ -107,5 +110,6 @@ footer .container p{
     float: left;
     padding: 29px 0;
     margin: 0;
+    color: #b5b5b5;
   }
 }
