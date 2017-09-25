@@ -1,11 +1,15 @@
 body {
   background: url('../img/bg-fondo.jpg');
 }
+.error {
+  color: red;
+}
 .container {
   font-family: arial;
   margin: 30px auto;
   padding: 30px 10px;
   background-color: rgba(0, 0, 0, 0.5);
+  color: #b5b5b5;
 }
 h1 {
   font-size: 30px;
@@ -15,7 +19,6 @@ h1 {
   color: #b5b5b5;
 }
 label {
-  color: #b5b5b5;
   font-weight: normal;
 }
 button {
