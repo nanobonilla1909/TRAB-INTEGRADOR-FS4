@@ -19,7 +19,7 @@ if ($_POST) {
   <body>
     <div class="container">
       <h1>Registrate</h1>
-      <form class="register" action="register.php" method="post" enctype="multipart/form-data">
+      <form class="register" action="register_process.php" method="post" enctype="multipart/form-data">
         <label>Nombre</label><br>
         <input class="form-control" type="text" name="name" value="<?=(!empty($_POST['name'])?$_POST['name']:"")?>">
         <?php if(!empty($errors['name'])) { ?><small><span class="error"><? echo $errors['name']?></span></small><br><?php } else { echo "<br>"; } ?>
