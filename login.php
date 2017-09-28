@@ -1,4 +1,7 @@
 <?php
+	include("header.php");
+?>
+<?php
 if (!empty($_POST)) {
   $error = [];
 
@@ -11,16 +14,7 @@ if (!empty($_POST)) {
   // echo "</pre>";
 }
 ?>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Ingresar</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/login.css">
-  </head>
+
   <body>
   <div class="container">
     <h1>Ingresar</h1>

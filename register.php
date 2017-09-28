@@ -1,21 +1,13 @@
 <?php
+	include("header.php");
+?>
+<?php
 require("functions.php");
 if ($_POST) {
   $errors = validateInformation($_POST);
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Registro</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/login.css">
-
-  </head>
   <body>
     <div class="container">
       <h1>Registrate</h1>
