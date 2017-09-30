@@ -53,7 +53,7 @@ if ($_POST) {
         <input type="checkbox" name="newsletter" value=""> Deseo recibir noticias del newsletter<br>
         <div class="submit">
           <a href="register.php"><button type="submit" name="">Registrarme</button></a>
-          <a href="index.php"><button type="submit" name="cancel">Cancelar</button></a>
+          <a href="index.php"><button type="button" name="cancel">Cancelar</button></a>
         </div>
       </form>
     </div>
