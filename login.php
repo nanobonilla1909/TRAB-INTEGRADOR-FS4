@@ -1,20 +1,37 @@
 <?php
-	include("header.php");
-?>
-<?php
-if (!empty($_POST)) {
-  $error = [];
 
-  if (!filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)) {
-    $error['email'] = 'Revisar email';
+	require_once("functions.php");
+
+	if (estaLogueado()){
+		header("Location:index.php");
+	}
+
+$arrayErrores = [];
+if ($_POST) {
+
+  //Validar
+  $arrayErrores = processLogin($_POST);
+
+  //Si es valido, loguear
+  if (count($arrayErrores) == 0) {
+    loguear($_POST["email"]);
+    if (isset($_POST["recordame"])) {
+      recordarUsuario($_POST["email"]);
+    }
+    header("Location:index.php");exit;
   }
-
-  // echo "<pre>";
-  // print_r($error);
-  // echo "</pre>";
 }
-?>
 
+
+include("header.php");
+?>
+<?php if (count($arrayErrores) > 0) : ?>
+	<ul style="color:red">
+		<?php foreach($arrayErrores as $error) : ?>
+			<li><?=$error?></li>
+		<?php endforeach; ?>
+	</ul>
+<?php endif; ?>
   <body>
   <div class="container">
     <h1>Ingresar</h1>
@@ -22,11 +39,11 @@ if (!empty($_POST)) {
       <label>E-Mail</label><br>
       <input class="form-control" type="text" name="email">
       <?php if(!empty($error['email'])) { ?>
-      <small><?php echo $error['email'];} ?></small>
+      <small><?= $error['email'];} ?></small>
       <br>
       <label>Contraseña</label><br>
       <input class="form-control" type="password" name="pass">
-      <label><input type="checkbox"> Recordarme</label>
+      <label><input type="checkbox" name="recordame"> Recordarme</label>
       <ul>
         <li><a href="register.php">Olvidaste tu contraseña?</a></li>
         <li><a href="register.php">Aun no tenes usuario? Registrarse</a></li>

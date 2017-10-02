@@ -78,4 +78,65 @@ function getAll() {
   return $arrayFinal;
 }
 
+function processLogin($arraypost){
+  $arrayDeErrores = [];
+
+  if (strlen($informacion["email"]) == 0) {
+    $arrayDeErrores["email"] = "Eu, ni pusiste mail";
+  }
+  else if(filter_var($arraypost["email"], FILTER_VALIDATE_EMAIL) == false) {
+    $arrayDeErrores["email"] = "Pusiste un mail que no era valido";
+  }
+  else if (getByEmail($arraypost["email"]) == NULL) {
+    $arrayDeErrores["email"] = "El usuario no existe";
+  } else {
+    //Validar la contraseña
+    $usuario = getByEmail($arraypost["email"]);
+    if (password_verify($arraypost["pass"], $usuario["pass"]) == false) {
+      $arrayDeErrores["pass"] = "La contraseña no verifica";
+    }
+  }
+
+  return $arrayDeErrores;
+  }
+
+  function getByEmail($email) {
+    $todos = getAll();
+
+    foreach ($todos as $usuario) {
+      if ($usuario["email"] == $email) {
+        return $usuario;
+      }
+    }
+
+    return NULL;
+
+  }
+
+  function loguear($email) {
+    $_SESSION["usuarioLogueado"] = $email;
+  }
+
+  function estaLogueado() {
+    if (isset($_SESSION["usuarioLogueado"])) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  function usuarioLogueado() {
+    if (estaLogueado()) {
+      return getByEmail($_SESSION["usuarioLogueado"]);
+    }
+    else {
+      return NULL;
+    }
+  }
+
+  function recordarUsuario($email) {
+    setcookie("usuarioLogueado", $email, time() + 60*60*24*7);
+  }
+
 ?>

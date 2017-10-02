@@ -114,6 +114,10 @@ footer .container p{
   }
 }
 
-form label{
+label{
   color: white;
+}
+
+.error {
+  color: red;
 }
