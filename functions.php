@@ -81,7 +81,7 @@ function getAll() {
 function processLogin($arraypost){
   $arrayDeErrores = [];
 
-  if (strlen($informacion["email"]) == 0) {
+  if (strlen($arraypost["email"]) == 0) {
     $arrayDeErrores["email"] = "Eu, ni pusiste mail";
   }
   else if(filter_var($arraypost["email"], FILTER_VALIDATE_EMAIL) == false) {

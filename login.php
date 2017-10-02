@@ -36,12 +36,12 @@ include("header.php");
   <div class="container">
     <h1>Ingresar</h1>
     <form action="login.php" method="post">
-      <label>E-Mail</label><br>
+      <label class="nombrecampo">E-Mail</label><br>
       <input class="form-control" type="text" name="email">
       <?php if(!empty($error['email'])) { ?>
       <small><?= $error['email'];} ?></small>
       <br>
-      <label>Contraseña</label><br>
+      <label class="nombrecampo">Contraseña</label><br>
       <input class="form-control" type="password" name="pass">
       <label><input type="checkbox" name="recordame"> Recordarme</label>
       <ul>

@@ -114,10 +114,10 @@ footer .container p{
   }
 }
 
-label{
-  color: white;
-}
-
 .error {
   color: red;
+}
+
+.nombrecampo {
+  color: #b5b5b5;
 }
