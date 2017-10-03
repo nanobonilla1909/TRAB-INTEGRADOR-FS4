@@ -40,9 +40,13 @@
           else {
 
                  $_SESSION["usuarioLogueado"] = $_COOKIE["usuarioLogueado"]; ?>
+               <div class="login">
                  <ul>
-                   <li><span> PASAAAAAAAAA<?= $_SESSION["usuarioLogueado"]; ?>| </span></li>
+                   <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+                   <li><span> <?= $_SESSION["usuarioLogueado"]; ?> | </span></li>
+                   <li><a href="logout.php">Cerrar Sesion</a></li>
                  </ul>
+                </div>
           <?php }}
 
         else { ?>
@@ -50,7 +54,7 @@
         <div class="login">
           <ul>
             <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
-            <li><span> <?= $_SESSION["usuarioLogueado"] ?>| </span></li>
+            <li><span> <?= $_SESSION["usuarioLogueado"] ?> | </span></li>
             <li><a href="logout.php">Cerrar Sesion</a></li>
           </ul>
         </div>
