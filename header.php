@@ -1,3 +1,6 @@
+<?php
+  require_once("functions.php");
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,14 +23,40 @@
             <button type="submit" class="btn btn-default">Buscar</button>
           </div>
         </form>
+
+        <?php if (!estaLogueado()) {
+
+          if (!isset($_COOKIE["usuarioLogueado"])) {?>
+
+            <div class="login">
+              <ul>
+                <li><a href="login.php">Ingresar</a></li>
+                <li><span> | </span></li>
+                <li><a href="register.php">Registrarse</a></li>
+              </ul>
+            </div>
+
+          <?php }
+          else {
+
+                 $_SESSION["usuarioLogueado"] = $_COOKIE["usuarioLogueado"]; ?>
+                 <ul>
+                   <li><span> PASAAAAAAAAA<?= $_SESSION["usuarioLogueado"]; ?>| </span></li>
+                 </ul>
+          <?php }}
+
+        else { ?>
+
         <div class="login">
           <ul>
             <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
-            <li><a href="login.php">Ingresar</a></li>
-            <li><span> | </span></li>
-            <li><a href="register.php">Registrarse</a></li>
+            <li><span> <?= $_SESSION["usuarioLogueado"] ?>| </span></li>
+            <li><a href="logout.php">Cerrar Sesion</a></li>
           </ul>
         </div>
+
+      <?php } ?>
+
       </header>
       <nav class="navbar navbar-default">
         <div class="container-fluid">

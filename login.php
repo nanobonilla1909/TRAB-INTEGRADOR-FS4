@@ -43,7 +43,7 @@ include("header.php");
       <br>
       <label class="nombrecampo">Contraseña</label><br>
       <input class="form-control" type="password" name="pass">
-      <label><input type="checkbox" name="recordame"> Recordarme</label>
+      <label class="nombrecampo"><input type="checkbox" name="recordame"> Recordarme</label>
       <ul>
         <li><a href="register.php">Olvidaste tu contraseña?</a></li>
         <li><a href="register.php">Aun no tenes usuario? Registrarse</a></li>
