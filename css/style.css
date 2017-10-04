@@ -121,3 +121,13 @@ footer .container p{
 .nombrecampo {
   color: #b5b5b5;
 }
+
+button {
+  background-color: #D68A00;
+  color: white;
+  padding: 10px 30px;
+  margin: 8px 10px;
+  border: none;
+  cursor: auto;
+
+}
