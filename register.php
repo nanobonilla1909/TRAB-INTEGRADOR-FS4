@@ -9,6 +9,9 @@ if ($_POST) {
     $user = doUser($_POST);
     // lo guarda
     saveUser($user);
+
+    loguear($_POST["email"]);
+
     // redirecciona al home
     header("Location:index.php");exit;
   }
@@ -32,7 +35,7 @@ if ($_POST) {
         <input class="form-control" type="text" name="email" value="<?=(!empty($_POST['email'])?$_POST['email']:"")?>">
         <?php if(!empty($errors['email'])) { ?><small><span class="error"><?= $errors['email']?></span></small><br><?php } else { echo "<br>"; } ?>
         <label class="nombrecampo">Foto de Perfil</label><br>
-        <input type="file" name="avatar">
+        <input class="label-upload-file" type="file" name="avatar">
         <?php if(isset($errors['avatar'])) { ?><small><span class="error"><?= $errors['avatar']?></span></small><br><?php } else { echo "<br>"; } ?>
         <label class="nombrecampo">Contraseña</label><br>
         <input class="form-control" type="password" name="pass" value="<?=(!empty($_POST['pass'])?$_POST['pass']:"")?>">

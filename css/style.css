@@ -120,6 +120,7 @@ footer .container p{
 
 .nombrecampo {
   color: #b5b5b5;
+
 }
 
 button {
@@ -130,4 +131,8 @@ button {
   border: none;
   cursor: auto;
 
+}
+
+.label-upload-file {
+  color: white;
 }

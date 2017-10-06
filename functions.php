@@ -26,7 +26,7 @@ function validateInformation($information) {
   if (strlen($information["pass"]) < 6) {
     $errors["pass"] = "La contraseña tiene que tener al menos 6 caracteres";
   } else if ($information["pass"] != $information["pass-c"]) {
-    $errors["pass"] = "La contraseña no verifica";
+    $errors["pass"] = "La contraseña no es la correcta.";
   }
 
   $errorAvatar = $_FILES["avatar"]["error"];
@@ -34,15 +34,20 @@ function validateInformation($information) {
   $extention = pathinfo($nameAvatar, PATHINFO_EXTENSION);
   $avatarSize = $_FILES["avatar"]["size"];
 
-  if ($errorAvatar != UPLOAD_ERR_OK) {
-    $errors["avatar"] = "Error al cargar la foto";
+  if (!empty($nameAvatar)) {
+
+      if ($errorAvatar != UPLOAD_ERR_OK) {
+        $errors["avatar"] = "Error al cargar la foto";
+      }
+      else if ($extention != "jpg" && $extention != "jpeg" && $extention != "png") {
+        $errors["avatar"] = "El avatar debe tener extension JPG, JPEG o PNG";
+      }
+      elseif ($avatarSize > 1572864) {
+        $errors["avatar"] = "El tamanio debe ser menor";
+      }
+
   }
-  else if ($extention != "jpg" && $extention != "jpeg" && $extention != "png") {
-    $errors["avatar"] = "El avatar debe tener extension JPG, JPEG o PNG";
-  }
-  elseif ($avatarSize > 1572864) {
-    $errors["avatar"] = "El tamanio debe ser menor";
-  }
+
 
   if (!isset($_POST["terms"])) {
     $errors["terms"] = "Debe ser mayor de edad y aceptar Terminos y condiciones";
