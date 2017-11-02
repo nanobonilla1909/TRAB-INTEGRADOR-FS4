@@ -3,41 +3,36 @@
 	require_once("repositorio.php");
 
 	class ValidadorUsuario extends Validador {
-		public function validar(Array $datos, Repositorio $repo) {
+		public function validate(Array $datos, Repositorio $repo) {
 
-			$repoUsuarios = $repo->getRepositorioUsuarios();
+			$repoUsers = $repo->getRepositorioUsuarios();
 
-			$errores = [];
+			$errors = [];
 	        if (empty(trim($datos["name"])))
 	        {
-	            $errores["name"] = "Che amigo, no pusiste nada en el nombre";
+	            $errors["name"] = "Por favor ingrese su nombre";
 	        }
-
 	        if (empty(trim($datos["email"])))
 	        {
-	            $errores["email"] = "Por favor ingrese mail";
+	            $errors["email"] = "Por favor ingrese mail";
 	        }
 	        elseif (!filter_var($datos["email"], FILTER_VALIDATE_EMAIL)) {
-	            $errores["email"] = "Por favor ingrese un mail correcto";
+	            $errors["email"] = "Por favor ingrese un mail correcto";
 	        }
-	        elseif ($repoUsuarios->existeElMail($datos["email"]))
+	        elseif ($repoUsers->existeElMail($datos["email"]))
 	        {
-	            $errores["email"] = "El email ya esta registrado";
+	            $errors["email"] = "El email ya esta registrado";
 	        }
 
-			  if ($datos["username"] == "")
+			if ($datos["surname"] == "")
 	        {
-	            $errores["username"] = "Ingrese un username";
+	            $errors["surname"] = "Por favor ingrese su apellido";
 	        }
 
-	        if ($datos["paises"] == "")
-	        {
-	            $errores["paises"] = "Ingrese un pais";
-	        }
 	        if ($_FILES["avatar"]["error"] != UPLOAD_ERR_OK) {
-	            $errores["avatar"] = "Hubo un error al subir la imagen, intentelo de nuevo más tarde";
+	            $errors["avatar"] = "Hubo un error al subir la imagen, intentelo de nuevo más tarde";
 	        }
 
-	        return $errores;
+	        return $errors;
 		}
 	}

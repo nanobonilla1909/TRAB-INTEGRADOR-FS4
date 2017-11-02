@@ -1,28 +1,62 @@
 <?php
-require("functions.php");
-if ($_POST) {
-  // valido informacion
-  $errors = validateInformation($_POST);
-  // si esta ok
-  if(count($errors) == 0){
-    // crea user
-    $user = doUser($_POST);
-    // lo guarda
-    saveUser($user);
+    require_once("soporte.php");
+    require_once("class/validadorUsuario.php");
 
-    loguear($_POST["email"]);
+    $repoUsers = $repo->getRepositorioUsuarios();
 
-    // redirecciona al home
-    header("Location:index.php");exit;
-  }
-}
+    if ($auth->isLogged()) {
+        header("Location:index.php");exit;
+    }
+    $errors = [];
+    $nombreDefault = "";
+    $emailDefault = "";
+    $surnameDefault = "";
 
+    if (!empty($_POST))
+    {
+      $validador = new ValidadorUsuario();
+    
+      //Se envió información
+      $errors = $validador->validate($_POST, $repo);
+
+      if (empty($errors))
+      {
+        //No hay errores
+        //Lo registro
+        $user = new User(
+            null,
+            $_POST["name"],
+            $_POST["surname"],
+            $_POST["email"],
+            $_POST["password"]
+        );
+        $user->setPassword($_POST["password"]);
+        $user->save($repoUsers);
+        $user->setAvatar($_FILES["avatar"]);
+
+        //Redirijo al index
+        header("Location:index.php");exit;
+      }
+
+      if (!isset($errors["name"]))
+      {
+          $nombreDefault = $_POST["name"];
+      }
+      if (!isset($errors["surname"]))
+      {
+          $surnameDefault = $_POST["surname"];
+      }
+      if (!isset($errors["email"]))
+      {
+          $emailDefault = $_POST["email"];
+      }
+    }
 
 ?>
 <?php
 	include("header.php");
 ?>
-    <div class="container">
+    <div class="container-login">
       <h1>Registrate</h1>
       <form class="register" action="register.php" method="post" enctype="multipart/form-data">
         <label class="nombrecampo">Nombre</label><br>
@@ -38,15 +72,15 @@ if ($_POST) {
         <input class="label-upload-file" type="file" name="avatar">
         <?php if(isset($errors['avatar'])) { ?><small><span class="error"><?= $errors['avatar']?></span></small><br><?php } else { echo "<br>"; } ?>
         <label class="nombrecampo">Contraseña</label><br>
-        <input class="form-control" type="password" name="pass" value="<?=(!empty($_POST['pass'])?$_POST['pass']:"")?>">
-        <?php if(!empty($errors['pass'])) { ?><small><span class="error"><?= $errors['pass']?></span></small><br><?php } else { echo "<br>"; } ?>
+        <input class="form-control" type="password" name="password" value="<?=(!empty($_POST['password'])?$_POST['password']:"")?>">
+        <?php if(!empty($errors['password'])) { ?><small><span class="error"><?= $errors['password']?></span></small><br><?php } else { echo "<br>"; } ?>
         <label class="nombrecampo">Confirmar contraseña</label><br>
-        <input class="form-control" type="password" name="pass-c" value="<?=(!empty($_POST['pass-c'])?$_POST['pass-c']:"")?>">
-        <?php if(!empty($errors['pass-c'])) { ?><small><span class="error"><?= $errors['pass-c']?></span></small><br><?php } else { echo "<br>"; } ?>
+        <input class="form-control" type="password" name="password-c" value="<?=(!empty($_POST['password-c'])?$_POST['password-c']:"")?>">
+        <?php if(!empty($errors['password-c'])) { ?><small><span class="error"><?= $errors['password-c']?></span></small><br><?php } else { echo "<br>"; } ?>
         <input type="checkbox" name="terms" value="1"> <span class="nombrecampo">Soy mayor de 18 años y acepto los <strong>Terminos y condiciones</strong></span>
         <?php if(isset($errors['terms'])) { ?><br><small><span class="error"><?= $errors['terms']?></span></small><br><?php } else { echo "<br>"; } ?>
         <input type="checkbox" name="newsletter" value=""> <span class="nombrecampo"> Deseo recibir noticias del newsletter</span><br>
-        <div class="submit">
+        <div class="submit-login">
           <a href="register.php"><button type="submit" name="">Registrarme</button></a>
           <a href="index.php"><button type="button" name="cancel">Cancelar</button></a>
         </div>

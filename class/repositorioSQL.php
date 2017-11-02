@@ -7,7 +7,7 @@
 		private $conn;
 
 		public function __construct() {
-			$dsn = 'mysql:host=localhost;dbname=registro;charset=utf8mb4';
+			$dsn = 'mysql:host=127.0.0.1;dbname=register;charset=utf8mb4';
 
 			$user = "root";
 			$pass = "";

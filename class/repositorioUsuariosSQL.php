@@ -45,7 +45,7 @@
 
 	    	$query = $this->conn->prepare($sql);
 
-	    	$query->bindValue(":name", $user->getNombre(), PDO::PARAM_STR);
+	    	$query->bindValue(":name", $user->getName(), PDO::PARAM_STR);
 			$query->bindValue(":surname", $user->getSurname(), PDO::PARAM_STR);
 			$query->bindValue(":email", $user->getEmail(), PDO::PARAM_STR);
 	    	$query->bindValue(":password", $user->getPassword(), PDO::PARAM_STR);

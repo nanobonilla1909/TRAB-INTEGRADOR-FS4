@@ -1,5 +1,10 @@
 <?php
-  require_once("functions.php");
+  require_once("soporte.php");
+  require_once("class/auth.php");
+
+  $repoUsers = $repo->getRepositorioUsuarios();
+	$userLogged = $auth->getUserLogged($repoUsers);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,6 +15,7 @@
     <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/login.css"> -->
   </head>
   <body>
     <div class="container">
@@ -24,9 +30,9 @@
           </div>
         </form>
 
-        <?php if (!estaLogueado()) {
+        <?php if (!$auth->isLogged()) {
 
-          if (!isset($_COOKIE["usuarioLogueado"])) {?>
+          if (!isset($_COOKIE["userLogged"])) {?>
 
             <div class="login">
               <ul>
@@ -39,11 +45,11 @@
           <?php }
           else {
 
-                 $_SESSION["usuarioLogueado"] = $_COOKIE["usuarioLogueado"]; ?>
+                 $_SESSION["userLogged"] = $_COOKIE["userLogged"]; ?>
                <div class="login">
                  <ul>
                    <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
-                   <li><span> <?= $_SESSION["usuarioLogueado"]; ?> | </span></li>
+                   <li><span> <?= $userLogged->getName() ?> | </span></li>
                    <li><a href="logout.php">Cerrar Sesion</a></li>
                  </ul>
                 </div>
@@ -54,7 +60,7 @@
         <div class="login">
           <ul>
             <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
-            <li><span> <?= $_SESSION["usuarioLogueado"] ?> | </span></li>
+            <li><span> <?= $userLogged->getName() ?> | </span></li>
             <li><a href="logout.php">Cerrar Sesion</a></li>
           </ul>
         </div>
