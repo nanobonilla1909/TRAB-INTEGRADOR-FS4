@@ -1,5 +1,6 @@
 <?php
 	require_once("repositorioUsuarios.php");
+	require_once("repositorioSQL.php");
 
 	class RepositorioUsuariosSQL extends RepositorioUsuarios {
 
@@ -39,7 +40,7 @@
 
 	    public function save(User $user) {
 	    	if ($user->getId() == null) {
-	    		$sql = "INSERT into users(id,name,surname,email,password) values (default, :name, :surname, :email, :password)";
+	    		$sql = "INSERT into users (id,name,surname,email,password) values (default,:name,:surname,:email,:password)";
 	    	}
 		
 

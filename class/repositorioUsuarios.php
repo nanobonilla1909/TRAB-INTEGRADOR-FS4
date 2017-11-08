@@ -14,7 +14,7 @@
 
 	    public function getUserByEmail($email) {
 	        //1: Me traigo todos los usuarios y ya opero con arrays
-	        $user = $this->getAllUsers();
+	        $users = $this->getAllUsers();
 
 	        //2: Los recorro y si alguno es el que busco, devuelvo
 	        foreach($users as $user)
