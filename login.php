@@ -1,45 +1,41 @@
 <?php
+	require_once("soporte.php");
+	require_once("class/validadorLogin.php");
 
-	require_once("functions.php");
-
-	if (estaLogueado()){
-		header("Location:index.php");
+	if ($auth->isLogged()) {
+		header("Location:index.php");exit;
 	}
+	$errors = [];
+	if ($_POST) {
 
-$arrayErrores = [];
-if ($_POST) {
+		$validador = new ValidadorLogin();
 
-  //Validar
-  $arrayErrores = processLogin($_POST);
+		$errors = $validador->validate($_POST, $repo);
 
-  //Si es valido, loguear
-  if (count($arrayErrores) == 0) {
-    loguear($_POST["email"]);
-    if (isset($_POST["recordame"])) {
-      recordarUsuario($_POST["email"]);
-    }
-    header("Location:index.php");exit;
-  }
-}
+		if (empty($errors))
+		{
+			$user = $repo->getRepositorioUsuarios()->getUserByEmail($_POST["email"]);
+			$auth->login($user);
+			if ($validador->estaEnFormulario("recordame"))
+			{
+				$auth->saveCookie($user);
+			}
+			header("Location:index.php");exit;
+		}
+	}
 
 
 include("header.php");
 ?>
-<?php if (count($arrayErrores) > 0) : ?>
-	<ul style="color:red">
-		<?php foreach($arrayErrores as $error) : ?>
-			<li><?=$error?></li>
-		<?php endforeach; ?>
-	</ul>
-<?php endif; ?>
+
   <body>
   <div class="container">
     <h1>Ingresar</h1>
     <form action="login.php" method="post">
       <label class="nombrecampo">E-Mail</label><br>
       <input class="form-control" type="text" name="email">
-      <?php if(!empty($error['email'])) { ?>
-      <small><?= $error['email'];} ?></small>
+      <?php if(!empty($errors['email'])) { ?>
+      <small><?= $errors['email'];} ?></small>
       <br>
       <label class="nombrecampo">Contraseña</label><br>
       <input class="form-control" type="password" name="pass">
