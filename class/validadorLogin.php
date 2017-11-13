@@ -11,13 +11,13 @@
 
 	        if (empty(trim($datos["email"])))
 	        {
-	            $errors["email"] = "Por favor ingrese mail";
+	            $errors["email"] = "Por favor ingrese email";
 	        }
 	        if (empty(trim($datos["password"])))
 	        {
 	            $errors["password"] = "Por favor ingrese password";
 	        }
-	        if (!$repoUsers->existeElMail($datos["email"]))
+	        if (!$repoUsers->existEMail($datos["email"]))
 	        {
 	            $errors["email"] = "El usuario no existe";
 	        }

@@ -78,14 +78,14 @@
 			}
 		}
 
-		public function saveUser(RepositorioUsuarios $repo) {
-			$repo->saveUser($this);
+		public function save(RepositorioUsuarios $repo) {
+			$repo->save($this);
 		}
 
 		public function toArray() {
 			return [
 				"id" => $this->getId(),
-				"name" => $this->getNombre(),
+				"name" => $this->getName(),
 				"surname" => $this->getSurname(),
 				"email" => $this->getEmail(),
 				"password" => $this->getPassword()

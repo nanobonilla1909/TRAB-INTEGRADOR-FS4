@@ -24,21 +24,18 @@
 		}
 	}
 
-
-include("header.php");
+	include("header.php");
 ?>
-
-  <body>
-  <div class="container">
+  <div class="container-login">
     <h1>Ingresar</h1>
-    <form action="login.php" method="post">
+    <form class="register" action="login.php" method="post">
       <label class="nombrecampo">E-Mail</label><br>
       <input class="form-control" type="text" name="email">
       <?php if(!empty($errors['email'])) { ?>
-      <small><?= $errors['email'];} ?></small>
+      <small><span class="error"><?= $errors['email'];} ?></span></small>
       <br>
       <label class="nombrecampo">Contraseña</label><br>
-      <input class="form-control" type="password" name="pass">
+      <input class="form-control" type="password" name="password">
       <label class="nombrecampo"><input type="checkbox" name="recordame"> Recordarme</label>
       <ul>
         <li><a href="register.php">Olvidaste tu contraseña?</a></li>
@@ -49,7 +46,8 @@ include("header.php");
         <a href="index.php"><button type="button">Cancelar</button></a></br>
       </div>
     </form>
-  </div>
+	</div>
+</div>
 	<?php
 		include("footer.php");
 	?>
