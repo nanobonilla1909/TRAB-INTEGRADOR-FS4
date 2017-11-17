@@ -61,7 +61,7 @@
       <form class="register" action="register.php" method="post" enctype="multipart/form-data">
         <label class="nombrecampo">Nombre</label><br>
         <input class="form-control" type="text" name="name" value="<?=(!empty($_POST['name'])?$_POST['name']:"")?>">
-        <?php if(!empty($errors['name'])) { ?><small><span class="error"><?= $errors['name']?></span></small><br><?php } else { echo "<br>"; } ?>
+        <?php if(!empty($errors['name'])) { ?><small class="error"><?= $errors['name']?></small><br><?php } else { echo "<br>"; } ?>
         <label class="nombrecampo">Apellido</label><br>
         <input class="form-control" type="text" name="surname" value="<?=(!empty($_POST['surname'])?$_POST['surname']:"")?>">
         <?php if(!empty($errors['surname'])) { ?><small><span class="error"><?= $errors['surname']?></span></small><br><?php } else { echo "<br>"; } ?>
@@ -80,12 +80,13 @@
         <input type="checkbox" name="terms" value="1"> <span class="nombrecampo">Soy mayor de 18 años y acepto los <strong>Terminos y condiciones</strong></span>
         <?php if(isset($errors['terms'])) { ?><br><small><span class="error"><?= $errors['terms']?></span></small><br><?php } else { echo "<br>"; } ?>
         <input type="checkbox" name="newsletter" value=""> <span class="nombrecampo"> Deseo recibir noticias del newsletter</span><br>
-        <div class="submit-login">
+        <div class="submit">
           <a href="register.php"><button type="submit" name="">Registrarme</button></a>
           <a href="index.php"><button type="button" name="cancel">Cancelar</button></a>
         </div>
       </form>
     </div>
-    <?php
-    	include("footer.php");
-    ?>
+    </div>
+<?php
+    include("footer.php");
+?>

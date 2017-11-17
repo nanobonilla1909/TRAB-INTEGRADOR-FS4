@@ -19,7 +19,7 @@
 	        elseif (!filter_var($datos["email"], FILTER_VALIDATE_EMAIL)) {
 	            $errors["email"] = "Por favor ingrese un mail correcto";
 	        }
-	        elseif ($repoUsers->existeElMail($datos["email"]))
+	        elseif ($repoUsers->existEmail($datos["email"]))
 	        {
 	            $errors["email"] = "El email ya esta registrado";
 	        }

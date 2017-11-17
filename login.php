@@ -1,48 +1,41 @@
 <?php
+	require_once("soporte.php");
+	require_once("class/validadorLogin.php");
 
-	require_once("functions.php");
+	if ($auth->isLogged()) {
+		header("Location:index.php");exit;
+	}
+	$errors = [];
+	if ($_POST) {
 
-	if (estaLogueado()){
-		header("Location:index.php");
+		$validador = new ValidadorLogin();
+
+		$errors = $validador->validate($_POST, $repo);
+
+		if (empty($errors))
+		{
+			$user = $repo->getRepositorioUsuarios()->getUserByEmail($_POST["email"]);
+			$auth->login($user);
+			if ($validador->estaEnFormulario("recordame"))
+			{
+				$auth->saveCookie($user);
+			}
+			header("Location:index.php");exit;
+		}
 	}
 
-$arrayErrores = [];
-if ($_POST) {
-
-  //Validar
-  $arrayErrores = processLogin($_POST);
-
-  //Si es valido, loguear
-  if (count($arrayErrores) == 0) {
-    loguear($_POST["email"]);
-    if (isset($_POST["recordame"])) {
-      recordarUsuario($_POST["email"]);
-    }
-    header("Location:index.php");exit;
-  }
-}
-
-
-include("header.php");
+	include("header.php");
 ?>
-<?php if (count($arrayErrores) > 0) : ?>
-	<ul style="color:red">
-		<?php foreach($arrayErrores as $error) : ?>
-			<li><?=$error?></li>
-		<?php endforeach; ?>
-	</ul>
-<?php endif; ?>
-  <body>
-  <div class="container">
+  <div class="container-login">
     <h1>Ingresar</h1>
-    <form action="login.php" method="post">
+    <form class="register" action="login.php" method="post">
       <label class="nombrecampo">E-Mail</label><br>
       <input class="form-control" type="text" name="email">
-      <?php if(!empty($error['email'])) { ?>
-      <small><?= $error['email'];} ?></small>
+      <?php if(!empty($errors['email'])) { ?>
+      <small><span class="error"><?= $errors['email'];} ?></span></small>
       <br>
       <label class="nombrecampo">Contraseña</label><br>
-      <input class="form-control" type="password" name="pass">
+      <input class="form-control" type="password" name="password">
       <label class="nombrecampo"><input type="checkbox" name="recordame"> Recordarme</label>
       <ul>
         <li><a href="register.php">Olvidaste tu contraseña?</a></li>
@@ -53,7 +46,8 @@ include("header.php");
         <a href="index.php"><button type="button">Cancelar</button></a></br>
       </div>
     </form>
-  </div>
+	</div>
+</div>
 	<?php
 		include("footer.php");
 	?>

@@ -1,6 +1,5 @@
 <?php
   require_once("soporte.php");
-  require_once("class/auth.php");
 
   $repoUsers = $repo->getRepositorioUsuarios();
 	$userLogged = $auth->getUserLogged($repoUsers);
@@ -15,7 +14,7 @@
     <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/login.css"> -->
+    <link rel="stylesheet" href="css/login.css">
   </head>
   <body>
     <div class="container">
@@ -30,10 +29,7 @@
           </div>
         </form>
 
-        <?php if (!$auth->isLogged()) {
-
-          if (!isset($_COOKIE["userLogged"])) {?>
-
+        <?php if (!$auth->isLogged()) { ?>
             <div class="login">
               <ul>
                 <li><a href="login.php">Ingresar</a></li>
@@ -41,32 +37,15 @@
                 <li><a href="register.php">Registrarse</a></li>
               </ul>
             </div>
-
-          <?php }
-          else {
-
-                 $_SESSION["userLogged"] = $_COOKIE["userLogged"]; ?>
-               <div class="login">
-                 <ul>
-                   <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
-                   <li><span> <?= $userLogged->getName() ?> | </span></li>
-                   <li><a href="logout.php">Cerrar Sesion</a></li>
-                 </ul>
-                </div>
-          <?php }}
-
-        else { ?>
-
-        <div class="login">
-          <ul>
-            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
-            <li><span> <?= $userLogged->getName() ?> | </span></li>
-            <li><a href="logout.php">Cerrar Sesion</a></li>
-          </ul>
-        </div>
-
-      <?php } ?>
-
+        <?php } else { ?>
+              <div class="login">
+                <ul>
+                  <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+                  <li><span> <?= $userLogged->getName() ?> | </span></li>
+                  <li><a href="logout.php">Cerrar Sesion</a></li>
+                </ul>
+              </div>
+        <? } ?>
       </header>
       <nav class="navbar navbar-default">
         <div class="container-fluid">
